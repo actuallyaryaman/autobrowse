@@ -25,7 +25,7 @@ try :
             n -= 1
             time.sleep(seconds)
             if n==0 :
-                os.system("pkill -s-signal=TERM msedge")
+                os.system("pkill msedge")
                 
         elif (a=="WIN"):
             w = data_win[random.randint(0, len(data_win)-1)]
