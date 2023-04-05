@@ -5,12 +5,13 @@ import os
 
 try:
     with open("/usr/share/dict/words", 'r', encoding='utf-8') as f:
-        data = f.read().splitlines()
+        data_win = f.read().splitlines()
         ostype="UNIX"
 
 except:
-    data_win = ["nor", "norm", "normal", "normalcy", "normalcy's", "normality", "normality's", "normalization", "normalization's", "normalize", "normalized", "normalizes", "normalizing", "normally", "normal's", "normative", "norm's", "norms", "north", "northbound", "northeast", "northeaster", "northeasterly", "northeastern", "northeaster's", "northeasters", "northeast's", "northeastward", "northerlies", "northerly", "northerly's", "northern", "northerner", "northerner's", "northerners", "northernmost", "north's", "northward", "northwards", "northwest", "northwesterly", "northwestern", "northwest's", "northwestward", "no's", "nos", "nose", "nosebleed", "nosebleed's", "nosebleeds", "nosed", "nosedive", "nosedived", "nosedive's", "nosedives", "nosediving", "nosedove", "nosegay", "nosegay's", "nosegays", "nose's", "noses", "nosey", "nosh", "noshed", "noshes", "noshing", "nosh's", "nosier", "nosiest", "nosiness", "nosiness's", "nosing", "nostalgia", "nostalgia's", "nostalgic", "nostalgically", "nostril", "nostril's", "nostrils", "nostrum", "nostrum's", "nostrums", "nosy", "not", "notable", "notable's", "notables", "notably", "notaries"]
-    ostype="WIN"
+    with open(("words"), 'r', encoding='utf-8')as f:
+        data = d.read().splitlines()
+        ostype="WIN"
 
 try :
     a=ostype
@@ -21,7 +22,9 @@ try :
             with open("/usr/share/dict/words", 'r', encoding='utf-8') as f:
                 data = f.read().splitlines()
             w = data[random.randint(0, len(data))]
-            webbrowser.open_new_tab("https://www.bing.com/search?q="+w)
+            x = data[random.randint(0, len(data))]
+            webbrowser.register('edge', None,webbrowser.BackgroundBrowser("/usr/bin/microsoft-edge-stable"))
+            webbrowser.get('edge').open_new_tab("https://www.bing.com/search?q="+w+"+"+x)
             n -= 1
             time.sleep(seconds)
             if n==0 :
@@ -39,4 +42,4 @@ try :
             print("we hate mac")
             break
 except KeyboardInterrupt:
-    print(" Stopped")
+    print("unt, Stopped")
